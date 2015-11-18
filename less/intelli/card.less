@@ -1,0 +1,588 @@
+
+//
+// Cards
+// --------------------------------------------------
+
+@card-bg:           #fff;
+@card-border-color: #ddd;
+@card-padding:      10px;
+@card-title-color:  #000;
+@card-subtitle-color:  @link-color;
+@card-actions-toggle-color:         #999;
+@card-actions-toggle-active-color:  @link-color;
+
+.ia-card {
+	background: @card-bg;
+	border: 2px solid @card-border-color;
+	padding: @card-padding;
+	// margin-bottom: 30px;
+	position: relative;
+	.transition(all .15s ease-in-out);
+	border-radius: @border-radius-base;
+
+	&:hover {
+		border-color: @link-color;
+	}
+
+	.label-status {
+		position: absolute;
+		right: 5px;
+		top: 5px;
+		z-index: 40;
+		font-size: 14px;
+	}
+
+	&__image {
+		position: relative;
+		display: block;
+
+		img {
+			.img-responsive();
+			width: 300px;
+		}
+
+		&__more {
+			display: none;
+		}
+	}
+
+	&__support-info {
+		color: #fff;
+		font-size: 12px;
+		line-height: 12px;
+		padding: @card-padding/2;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		.clearfix();
+
+		background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.85)));
+		background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.85) 100%);
+		background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.85) 100%);
+		background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.85) 100%);
+		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.85) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+	}
+
+	&__content {
+		padding-top: @card-padding;
+
+		> *:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__actions {
+		text-decoration: none;
+		float: right;
+
+		> a {
+			color: @card-actions-toggle-color;
+			display: inline-block;
+			font-size: 16px;
+			line-height: 16px;
+			padding: 0 10px;
+			position: relative;
+			z-index: 1001;
+			
+			&:hover {
+				text-decoration: none;
+				color: @card-actions-toggle-active-color;
+			}
+		}
+
+		.dropdown-menu {
+			margin-top: -31px;
+		    width: 220px;
+
+			a {
+				padding-right: 20px;
+
+				> .fa {
+					padding: 3px 0;
+					float: left;
+					width: 16px;
+					margin-right: 6px;
+				}
+			}
+		}
+	}
+
+	&__badge {
+		position: absolute;
+		left: 0;
+		top: 0;
+		color: #fff;
+		padding: 4px 8px;
+		width: 50px;
+		height: 50px;
+		z-index: 150;
+
+		> span {
+			position: relative;
+			z-index: 160;
+		}
+
+		&::before {
+			position: absolute;
+			left: 0;
+			top: 0;
+			content: '';
+			display: block;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 50px 50px 0 0;
+			border-color: @brand-info transparent transparent transparent;
+		}
+
+		&--sponsored::before {
+			border-color: @brand-warning transparent transparent transparent;
+		}
+	}
+
+	&__title {
+		font-weight: bold;
+		display: block;
+		font-size: 16px;
+		line-height: 16px;
+		height: 32px;
+		overflow: hidden;
+		color: @card-title-color;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+
+	&__sub-title {
+		font-weight: bold;
+		font-size: 16px;
+		line-height: 16px;
+		color: @card-subtitle-color;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+
+	&.-featured {
+		border-color: @brand-info;
+		background: fade(@brand-info, 10%);
+	}
+
+	&.-sponsored {
+		border-color: @brand-warning;
+		background: fade(@brand-warning, 10%);
+	}
+
+	&__additional {
+		color: fade(@text-color, 70%);
+		display: none;
+	}
+
+	.-additional {
+		display: none;
+	}
+}
+
+.ia-car-info {
+	// .clearfix();
+	display: none;
+
+	&__icon {
+		text-decoration: none;
+		display: inline-block;
+		padding-left: 32px;
+		margin-right: 15px;
+		position: relative;
+		line-height: 20px;
+		color: @text-color;
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			width: 27px;
+			height: 20px;
+			margin-top: -10px;
+			background-repeat: no-repeat;
+			background-position: 0 0;
+		}
+
+		&--engine::before {
+			background-image: url('../img/icon-engine.png');
+		}
+
+		&--transmission::before {
+			background-image: url('../img/icon-transmission.png');
+		}
+
+		&--mileage::before {
+			background-image: url('../img/icon-speed.png');
+		}
+
+		&--body::before {
+			background-image: url('../img/icon-body.png');
+		}
+	}
+
+	&--block {
+		margin-top: 20px;
+
+		.ia-car-info__icon {
+			display: block;
+			margin-top: 15px;
+		}
+	}
+}
+
+.ia-car-summary {
+	display: none;
+	margin-top: 15px;
+	color: fade(@text-color, 70%);
+}
+
+.ia-card__info-table {
+	width: 100%;
+	font-size: 12px;
+	margin-bottom: 0;
+
+	td {
+		width: 50%;
+		padding: 5px 0;
+		border-bottom: 1px solid fade(@card-border-color, 20%);
+	}
+
+	tr:last-child td {
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+
+	&.-more {
+		display: none;
+	}
+
+	&__color {
+		display: inline-block;
+		margin-right: 10px;
+		width: 20px;
+		height: 20px;
+		border: 1px solid #f0f0f0;
+	}
+}
+
+.ia-card--small {
+	padding: @card-padding/2;
+
+	.ia-card__content {
+		padding-top: @card-padding/2;
+	}
+
+	.ia-card__title {
+		font-size: 13px;
+	}
+
+	@media (max-width: @screen-sm) {
+		.ia-card--h();
+	}
+}
+
+.ia-card--h {
+	.clearfix();
+	
+	&__image {
+		float: left;
+		width: 170px;
+		margin-right: 10px;
+
+		&__more {
+			display: block;
+			float: left;
+			width: 50px;
+			margin-right: 10px;
+
+			img {
+				.img-responsive();
+			}
+
+			a {
+				display: block;
+
+				+ a {
+					margin-top: 10px;
+				}
+			}
+		}
+
+		@media (max-width: @screen-xs) {
+			width: 70px;
+			margin-right: 5px;
+		}
+	}
+
+	.label-status {
+		right: 40px;
+		top: 8px;
+	}
+
+	&__content {
+		margin-left: 180px;
+		// overflow: hidden;
+		padding-top: 0;
+		padding-bottom: 0;
+
+		@media (max-width: @screen-xs) {
+			margin-left: 80px;
+		}
+	}
+
+	&__title {
+		height: auto;
+	}
+
+	&__additional {
+		display: block;
+	}
+
+	.-additional {
+		display: table-row;
+	}
+
+	.ia-card__info-table {
+		display: none;
+		// float: left;
+		// width: 54%;
+		// margin-right: 10px;
+	}
+
+	.ia-car-info,
+	.ia-car-summary {
+		display: block;
+	}
+}
+.ia-cards__items.-list .ia-card.-sponsored .ia-card__content {
+	margin-left: 240px;
+
+	@media (max-width: @screen-xs) {
+		margin-left: 80px;
+	}
+}
+
+
+
+//
+// List
+// --------------------------------------------------
+
+.ia-cards {
+
+	.row {
+		margin-left: -5px;
+		margin-right: -5px;
+
+		+ .row {
+			margin-top: 10px;
+		}
+	}
+
+	[class^="col-md"] {
+		padding: 0 5px;
+	}
+
+	&__actions {
+		.clearfix();
+		margin-bottom: 15px;
+		background: #f2f2f2;
+		padding: 10px 15px;
+	}
+
+	&__sorting {
+		float: left;
+
+		@media (max-width: @screen-xs) {
+			float: none;
+		}
+	}
+
+	&__filter {
+		float: left;
+		margin: 0;
+
+		&__item {
+			display: inline-block;
+
+			select {
+				.form-control();
+				display: inline-block;
+				width: 130px !important;
+				margin-left: 5px;
+				vertical-align: middle;
+			}
+		}
+
+		button {
+			margin-left: 5px;
+		}
+
+		@media (max-width: @screen-xs) {
+			float: none;
+		}
+	}
+
+	&__layout {
+		float: right;
+
+		a {
+			display: inline-block;
+			// margin-left: 15px;
+		}
+
+		@media (max-width: @screen-xs) {
+			float: none;
+			margin-top: 10px;
+		}
+	}
+
+	&__items {
+		margin-bottom: @vertical-rhythm;
+
+		&.-list {
+
+			.row {
+				margin: 0;
+
+				+ .row {
+					margin-top: 10px;
+				}
+			}
+
+			[class^="col-md"] {
+				padding: 0;
+				float: none;
+				width: 100%;
+
+				+ [class^="col-md"] {
+					margin-top: 10px;
+				}
+			}
+
+			.ia-card {
+				.ia-card--h();
+			}
+		}
+	}
+
+	&__small {
+		
+	}
+}
+
+
+
+// test <------------------------------------------------ REMOVE / REWRITE
+
+.wrp {
+	overflow: hidden;
+	font-weight: bold;
+	position: relative;
+	.clearfix();
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 10px;
+		background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1)));
+		background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+		background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+		background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+		background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 );
+	}
+
+	a {
+		float: left;
+		width: 300%;
+	}
+}
+
+
+
+//
+// Featured items
+// --------------------------------------------------
+
+.ia-item.-with-bg {
+	position: relative;
+	height: 150px;
+	overflow: hidden;
+	border-radius: @border-radius-base;
+
+	.ia-item__image {
+		border-radius: @border-radius-base;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 1;
+		max-width: none;
+		margin: 0;
+		overflow: hidden;
+
+		img {
+		  position: absolute;
+		  width: 300px !important;
+		  max-width: none;
+		  height: 300px;
+		  top: 50%;
+		  left: 50%;
+		  margin-top: -150px;
+		  margin-left: -150px;
+		  .transition(all .1s ease-in-out);
+		}
+	}
+
+	.ia-item__content {
+		z-index: 2;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		border-radius: @border-radius-base;
+		background: rgba(0,0,0,0.6);
+		padding: 20px;
+		font-size: 14px;
+		line-height: 16px;
+		.transition(all .2s ease);
+
+		&:hover {
+		  background: rgba(0,0,0,0.9);
+		}
+
+		a {
+		  color: #fff;
+
+		  &:hover {
+		  	color: #fff;
+		  }
+		}
+
+		p {
+			color: fade(#fff, 70%);
+		}
+	}
+
+	.ia-item__price {
+		font-weight: bold;
+		color: @brand-success !important;
+		margin: 0;
+	}
+
+}

@@ -1,0 +1,371 @@
+
+//
+// Buttons
+// --------------------------------------------------
+
+// Common styles
+.btn-default,
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger,
+.btn-white {
+
+  // Reset the shadow
+  &:active,
+  &.active {
+    .box-shadow(inset 0 2px 3px rgba(0,0,0,.125));
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    .box-shadow(none);
+  }
+
+  .badge {
+    text-shadow: none;
+  }
+}
+
+// Mixin for generating new styles
+.btn-styles(@btn-color: #555) {
+  background-color: @btn-color;
+  border-color: darken(@btn-color, 5%);
+
+  &:hover,
+  &:focus  {
+    background-color: darken(@btn-color, 5%);
+  }
+
+  &:active,
+  &.active {
+    background-color: darken(@btn-color, 5%);
+    border-color: darken(@btn-color, 5%);
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: darken(@btn-color, 5%);
+      background-image: none;
+    }
+  }
+
+  &.btn-ghost {
+    background: none;
+    color: darken(@btn-color, 5%);
+
+    &:hover,
+    &:focus  {
+      background-color: fade(@btn-color, 15%);
+      color: darken(@btn-color, 15%);
+    }
+  }
+}
+
+// Common styles
+.btn {
+  // Remove the gradient for the pressed/active state
+  &:active,
+  &.active {
+    background-image: none;
+  }
+}
+
+// Apply the mixin to the buttons
+.btn-default { 
+  .btn-styles(@btn-default-bg); 
+  text-shadow: 0 1px 0 #fff; 
+  border-color: #ccc;
+
+  &.active {
+    border-color: #ccc;
+  }
+}
+.btn-primary { .btn-styles(@btn-primary-bg); }
+.btn-success { .btn-styles(@btn-success-bg); }
+.btn-info    { .btn-styles(@btn-info-bg); }
+.btn-warning { .btn-styles(@btn-warning-bg); }
+.btn-danger  { .btn-styles(@btn-danger-bg); }
+.btn-white   { 
+  .btn-styles(#f0f0f0);
+  color: #555;
+}
+
+.btn-fixed-width {
+  min-width: 130px;
+}
+
+// social btns
+
+.btn-twitter {
+    background: #00acee;
+    border-radius: 0;
+    color: #fff
+}
+.btn-twitter:link, .btn-twitter:visited {
+    color: #fff
+}
+.btn-twitter:active, .btn-twitter:hover {
+    background: #0087bd;
+    color: #fff
+}
+.btn-facebook {
+    background: #3b5998;
+    border-radius: 0;
+    color: #fff
+}
+.btn-facebook:link, .btn-facebook:visited {
+    color: #fff
+}
+.btn-facebook:active, .btn-facebook:hover {
+    background: #30477a;
+    color: #fff
+}
+.btn-googleplus {
+    background: #e93f2e;
+    border-radius: 0;
+    color: #fff
+}
+.btn-googleplus:link, .btn-googleplus:visited {
+    color: #fff
+}
+.btn-googleplus:active, .btn-googleplus:hover {
+    background: #ba3225;
+    color: #fff
+}
+.btn-email {
+    background: #cd201f;
+    border-radius: 0;
+    color: #fff
+}
+.btn-email:link, .btn-email:visited {
+    color: #fff
+}
+.btn-email:active, .btn-email:hover {
+    background: darken(#cd201f, 3%);
+    color: #fff
+}
+.btn-linkedin {
+    background: #0e76a8;
+    border-radius: 0;
+    color: #fff
+}
+.btn-linkedin:link, .btn-linkedin:visited {
+    color: #fff
+}
+.btn-linkedin:active, .btn-linkedin:hover {
+    background: #0b6087;
+    color: #fff
+}
+
+
+//
+// Images
+// --------------------------------------------------
+
+.thumbnail,
+.img-thumbnail {
+  .box-shadow(0 1px 2px rgba(0,0,0,.075));
+}
+
+
+//
+// Dropdowns
+// --------------------------------------------------
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  background-color: darken(@dropdown-link-hover-bg, 5%);
+}
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  background-color: darken(@dropdown-link-active-bg, 5%);
+}
+
+
+//
+// Breadcrumb
+// --------------------------------------------------
+
+.breadcrumb {
+  background: @breadcrumb-light-bg;
+  padding: @breadcrumb-light-padding-vertical @breadcrumb-light-padding-horizontal;
+  margin: 0;
+}
+
+
+//
+// Alerts
+// --------------------------------------------------
+
+// Common styles
+.alert {
+  // text-shadow: 0 1px 0 rgba(255,255,255,.2);
+  // @shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 1px 2px rgba(0,0,0,.05);
+  // .box-shadow(@shadow);
+}
+
+// Mixin for generating new styles
+.alert-styles(@color) {
+  background-color: @color;
+  border: 0 none;
+  border-left: 3px solid darken(@color, 15%);
+}
+
+// Apply the mixin to the alerts
+.alert-success    { .alert-styles(@alert-success-bg); }
+.alert-info       { .alert-styles(@alert-info-bg); }
+.alert-warning    { .alert-styles(@alert-warning-bg); }
+.alert-danger,
+.alert-error      { .alert-styles(@alert-danger-bg); }
+
+
+//
+// Progress bars
+// --------------------------------------------------
+
+// Give the progress background some depth
+.progress {
+  #gradient > .vertical(@start-color: darken(@progress-bg, 4%); @end-color: @progress-bg)
+}
+
+// Mixin for generating new styles
+.progress-bar-styles(@color) {
+  #gradient > .vertical(@start-color: @color; @end-color: darken(@color, 10%));
+}
+
+// Apply the mixin to the progress bars
+.progress-bar            { .progress-bar-styles(@progress-bar-bg); }
+.progress-bar-success    { .progress-bar-styles(@progress-bar-success-bg); }
+.progress-bar-info       { .progress-bar-styles(@progress-bar-info-bg); }
+.progress-bar-warning    { .progress-bar-styles(@progress-bar-warning-bg); }
+.progress-bar-danger     { .progress-bar-styles(@progress-bar-danger-bg); }
+
+// Reset the striped class because our mixins don't do multiple gradients and
+// the above custom styles override the new `.progress-bar-striped` in v3.2.0.
+.progress-bar-striped {
+  #gradient > .striped();
+}
+
+
+//
+// List groups
+// --------------------------------------------------
+
+.list-group {
+  border-radius: @border-radius-base;
+  .box-shadow(0 1px 2px rgba(0,0,0,.075));
+}
+.list-group-item.active,
+.list-group-item.active:hover,
+.list-group-item.active:focus {
+  text-shadow: 0 -1px 0 darken(@list-group-active-bg, 10%);
+  #gradient > .vertical(@start-color: @list-group-active-bg; @end-color: darken(@list-group-active-bg, 7.5%));
+  border-color: darken(@list-group-active-border, 7.5%);
+
+  .badge {
+    text-shadow: none;
+  }
+}
+
+
+//
+// Panels
+// --------------------------------------------------
+
+// Common styles
+.panel {
+  .box-shadow(0 1px 2px rgba(0,0,0,.05));
+}
+
+// Mixin for generating new styles
+.panel-heading-styles(@color) {
+  background: @color;
+  // #gradient > .vertical(@start-color: @color; @end-color: darken(@color, 5%));
+}
+
+// Apply the mixin to the panel headings only
+.panel-default > .panel-heading   { .panel-heading-styles(@panel-default-heading-bg); }
+.panel-primary > .panel-heading   { .panel-heading-styles(@panel-primary-heading-bg); }
+.panel-success > .panel-heading   { .panel-heading-styles(@panel-success-heading-bg); }
+.panel-info > .panel-heading      { .panel-heading-styles(@panel-info-heading-bg); }
+.panel-warning > .panel-heading   { .panel-heading-styles(@panel-warning-heading-bg); }
+.panel-danger > .panel-heading    { .panel-heading-styles(@panel-danger-heading-bg); }
+
+
+
+//
+// Wells
+// --------------------------------------------------
+
+.well {
+  border-color: darken(@well-bg, 10%);
+  background: @well-bg;
+}
+
+
+
+//
+// Carousels
+// --------------------------------------------------
+
+.ia-carousel {
+  margin-bottom: @vertical-rhythm;
+
+  // redefine default
+  .owl-controls {
+    .owl-nav {
+      position: absolute;
+      right: 0;
+      top: -56px;
+      margin: 0;
+
+      [class*='owl-'] {
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        line-height: 20px;
+        display: inline-block;
+        border-radius: 0;
+        background: #ddd;
+        color: #888;
+        padding: 5px 12px;
+        margin: 0 0 0 15px;
+        border-radius: @border-radius-base;
+
+        &:hover {
+          background: @link-color;
+          color: #fff;
+        }
+      }
+
+      @media (max-width: @screen-xs) {
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: -46px;
+        margin-left: -38px;
+
+        [class*='owl-']:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+
+    // .owl-dots {
+    //   position: absolute;
+    //   top: -56px;
+    //   right: 100px;
+    // }
+  }
+}

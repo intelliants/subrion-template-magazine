@@ -1,0 +1,223 @@
+
+//
+// Navbar
+// --------------------------------------------------
+
+.navbar-brand {
+  padding: 14px 15px;
+  // border-right: 1px solid @lines-color;
+
+  span {
+    width: 124px;
+    height: 32px;
+    display: block;
+    text-indent: -9999px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+
+    .img-retina('../img/logo.png', '../img/logo@2x.png', 118px, 32px);
+  }
+
+  > img {
+    max-height: 32px;
+  }
+}
+
+.navbar {
+
+  .dropdown {
+    .clearfix();
+
+    > a {
+      float: left;
+    }
+  }
+
+  .navbar-nav__drop {
+    float: right;
+    color: @link-color;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 20;
+
+    @media (min-width: @grid-float-breakpoint) {
+      line-height: @navbar-height;
+      margin-left: -@navbar-padding-horizontal;
+      padding: 0 15px 0 5px;
+    }
+
+    @media (min-width: @grid-float-breakpoint) and (max-width: 840px) {
+      margin-left: -10px;
+    }
+  }
+}
+
+@media (min-width: @grid-float-breakpoint) {
+  .nav-account {
+    margin-right: -30px;
+
+    .navbar-fixed-top & {
+      margin-right: -15px;
+    }
+  }
+
+  .nav-main > li.active > a {
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: @brand-danger;
+    }
+  }
+}
+
+a.navbar-btn-accent,
+a.navbar-btn-accent:focus,
+a.navbar-btn-accent:active {
+  background: @navbar-default-link-active-color;
+  color: #fff !important;
+
+  &:hover,
+  &:focus {
+    background: darken(@navbar-default-link-active-color, 10%) !important;
+  }
+}
+
+a.navbar-btn-wishlist {
+  .fa {
+    color: #fabf00;
+  }
+}
+
+a.navbar-btn-compare {
+  .fa {
+    color: @link-color;
+  }
+}
+
+@media (min-width: @screen-sm) and (max-width: 1020px) {
+  a.navbar-btn-wishlist,
+  a.navbar-btn-compare {
+    display: none !important;
+  }
+}
+
+@media (min-width: @grid-float-breakpoint) {
+  a.navbar-btn-login,
+  a.navbar-btn-login:focus,
+  a.navbar-btn-login:active {
+    line-height: 30px !important;
+    margin: (@navbar-height - 30 - 1)/2 0;
+    margin-right: 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
+    .fa,
+    > img {
+      display: inline-block;
+      background: #f2f2f2;
+      color: @link-color !important;
+      border-radius: @border-radius-base;
+      width: 30px;
+      height: 30px;
+      line-height: 30px !important;
+      padding: 0 !important;
+      text-align: center;
+      margin-right: 5px;
+    }
+
+    > img {
+      height: 28px;
+      width: 28px;
+    }
+
+    &:hover {
+      .fa {
+        background: @link-color !important;
+        color: #fff !important;
+      }
+    }
+  }
+
+  .-guest {
+    display: none;
+  }
+}
+
+// Default navbar
+.navbar-default {
+  margin-bottom: 0;
+  border: 0 none;
+  .box-shadow(0 1px 2px rgba(0,0,0,.16));
+
+  .navbar-nav > .open > a,
+  .navbar-nav > .active > a {
+    background-color: darken(@navbar-default-link-active-bg, 5%);
+  }
+
+  .navbar-toggle {
+    border-color: transparent;
+
+    .icon-bar {
+      background-color: @navbar-default-link-active-color;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: fade(@navbar-default-link-active-color, 70%);
+      background-color: fade(@navbar-default-link-active-color, 30%);
+    }
+  }
+
+  .navbar-collapse {
+    border-color: @lines-color;
+  }
+}
+
+.navbar-brand,
+.navbar-nav > li > a {
+  text-shadow: none;
+
+  @media (min-width: @grid-float-breakpoint) and (max-width: 840px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.navbar-nav > li {
+
+  > .dropdown-menu {
+    border-radius: 0;
+    border: none;
+
+    @media (min-width: @grid-float-breakpoint) {
+      border-bottom: 2px solid @brand-primary;
+    }
+  }
+}
+
+// Undo rounded corners in static and fixed navbars
+.navbar-static-top,
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  border-radius: 0;
+  
+}
+
+// Fix active state of dropdown items in collapsed mode
+@media (max-width: @grid-float-breakpoint-max) {
+  .navbar .navbar-nav .open .dropdown-menu > .active > a {
+    &,
+    &:hover,
+    &:focus {
+      color: #fff;
+      #gradient > .vertical(@start-color: @dropdown-link-active-bg; @end-color: darken(@dropdown-link-active-bg, 5%));
+    }
+  }
+}

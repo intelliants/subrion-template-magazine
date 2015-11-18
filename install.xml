@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template name="magazine">
+	<title>Magazine</title>
+	<summary>Template for Subrion Publishing Script</summary>
+	<author>Gleb Surinov</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>1.0.0</version>
+	<date>2015-11-18</date>
+	<compatibility>4.0</compatibility>
+
+	<dependency type="package" exist="1">publishing</dependency>
+
+	<layout>
+		<position menu="1" movable="0">account</position>
+		<position menu="1" movable="0">mainmenu</position>
+
+		<position>slider</position>
+		<position>verytop</position>
+		<position>top</position>
+		<position>landing</position>
+		<position>bottom</position>
+		<position>verybottom</position>
+		<position>copyright</position>
+
+		<section name="content">
+			<position width="9">center</position>
+			<position fixed="1">right</position>
+		</section>
+
+		<section name="footer-blocks">
+			<position width="2">footer1</position>
+			<position width="2">footer2</position>
+			<position width="2">footer3</position>
+			<position width="6">footer4</position>
+		</section>
+	</layout>
+
+	<screenshots>
+		<screenshot name="1.jpg"><![CDATA[Home page]]></screenshot>
+		<screenshot name="2.jpg"><![CDATA[View article]]></screenshot>
+	</screenshots>
+
+	<configgroup name="template_magazine">Template</configgroup>
+
+	<config group="template_magazine" 
+		    name="magazine_divider1" 
+		    type="divider" 
+		    order="3000">General</config>
+
+	<config group="template_magazine" 
+		    name="max_top_menu_items" 
+		    type="text" 
+		    description="Max number of items in Main Menu"
+		    order="3002">7</config>
+
+	<config group="template_magazine"
+		    name="fixed_navbar" 
+		    type="radio"
+		    order="3003" 
+		    values="1,0" 
+		    description="Fixed navbar">1</config>
+
+	<config group="template_magazine" 
+		    name="website_color" 
+		    type="select" 
+		    multiplevalues="default,sky,roseus,carrot,bedroom" 
+		    description="Template color"
+		    order="3004">default</config>
+
+	<config group="template_magazine" 
+		    name="magazine_divider2" 
+		    type="divider" 
+		    order="3030">Social links</config>
+	
+	<config group="template_magazine"
+			name="template_social"
+		    type="radio" 
+		    order="3031"
+		    values="1,0" 
+		    description="Show links">1</config>
+	<config group="template_magazine"
+			name="template_social_t"
+		    type="text"
+		    order="3032"
+		    show="template_social|1" 
+		    description="Twitter Link">https://twitter.com/IntelliantsLLC</config>
+	<config group="template_magazine"
+			name="template_social_f"
+		    type="text" 
+		    order="3033" 
+		    show="template_social|1" 
+		    description="Facebook Link">https://www.facebook.com/Intelliants</config>
+	<config group="template_magazine"
+			name="template_social_g"
+		    type="text" 
+		    order="3034" 
+		    show="template_social|1" 
+		    description="Google+ Link">https://plus.google.com/102500660503219569194/posts</config>
+	<config group="template_magazine"
+			name="template_social_y"
+		    type="text" 
+		    order="3035" 
+		    show="template_social|1" 
+		    description="You Tube Link">#</config>
+
+	<config group="template_magazine" 
+		    name="ckeditor_css" 
+		    type="hidden" 
+		    description="CKEditor CSS"
+		    order="3099">ckeditor.css</config>
+
+	<changeset>
+		<menu position="account" status="active">account</menu>
+
+		<block status="active" position="slider" header="0">sticky_articles</block>
+		<block status="active" position="right" header="1" order="99" collapsible="0">articles_archive</block>
+		<block status="active" position="top" header="0" classname="" order="5" sticky="0" pages="index">priority_categories</block>
+		<block status="active" position="top" header="1" classname="" order="15" sticky="0" pages="index">new_articles</block>
+		<block status="active" position="top" header="1" classname="box--special" order="11" collapsible="0">featured_articles</block>
+		<block status="active" position="verytop" header="1" classname="box--sponsored" sticky="0" pages="index" order="1" collapsible="0">sponsored_articles</block>
+
+		<block status="active" position="verybottom" header="1" classname="" sticky="1" order="1" collapsible="0">random_articles</block>
+		<block status="active" position="right" header="1" classname="" sticky="1" order="1" collapsible="0">popular_articles</block>
+
+		<block status="inactive" position="right" classname="box--border">common_statistics</block>
+		<block status="inactive">newsline</block>
+		<block status="inactive">blogroll</block>
+		<block status="inactive">new_blog_posts</block>
+		<block status="inactive">blogs_archive</block>
+	</changeset>
+
+	<blocks>
+		<block name="benefits" 
+			   title="Benefits" 
+			   position="verybottom" 
+			   header="0"
+			   collapsible="0" 
+			   sticky="0"
+			   pages="index" 
+			   status="active" 
+			   type="html">
+			<![CDATA[
+<div class="benefits">
+	<div class="container">
+		<h2 class="title title--accent">Why our portal is the best?</h2>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="f-block">
+					<span class="fa fa-lock"></span>
+					<h4>Buy safely</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi repudiandae quo nisi iusto voluptatem minus debitis consequuntur.</p>
+					<p><a href="#">Learn more</a></p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="f-block">
+					<span class="fa fa-star"></span>
+					<h4>Looking for a special offer?</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi repudiandae quo nisi iusto voluptatem minus debitis consequuntur.</p>
+					<p><a href="#">Learn more</a></p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="f-block">
+					<span class="fa fa-rocket"></span>
+					<h4>Sell faster</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi repudiandae quo nisi iusto voluptatem minus debitis consequuntur.</p>
+					<p><a href="#">Learn more</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+			]]>
+		</block>
+	</blocks>
+
+	<phrases>
+		<phrase category="frontend" key="login">Log in</phrase>
+		<phrase category="frontend" key="register">Sign up</phrase>
+		<phrase category="frontend" key="login_sign_up">Login / Sign up</phrase>
+		<phrase category="frontend" key="register_tag">Register on our website and submit your own articles! Many features included in your private area.</phrase>
+		<phrase category="frontend" key="add_your_article">Add article</phrase>
+		<phrase category="frontend" key="added_on">added on</phrase>
+		<phrase category="frontend" key="copyright_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint accusantium doloremque, numquam, aut, modi similique corporis totam nulla pariatur nesciunt harum mollitia. Qui inventore dolores laboriosam, delectus temporibus deserunt neque?</phrase>
+	</phrases>
+</template>

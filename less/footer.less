@@ -1,0 +1,188 @@
+
+//
+// Footer
+// --------------------------------------------------
+
+.footer {
+	background: @footer-bg;
+	color: fade(#fff, 30%);
+	padding: @vertical-rhythm*2 0;
+	position: relative;
+
+	
+
+	[class^="col-md"] {
+
+		&:first-child {
+			padding-right: 60px;
+		}
+
+		&:last-child {
+			padding-left: 60px;
+		}
+	}
+
+	> .container {
+		position: relative;
+		z-index: 20;
+	}
+
+	a {
+		color: @brand-danger;
+
+		&:hover {
+			color: @brand-danger;
+		}
+	}
+
+	.nav {
+		margin-bottom: 15px;
+
+		> li {
+			float: left;
+			margin-right: 15px;
+
+			a {
+				padding: 0;
+
+				&:hover {
+					background: none;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	@media (max-width: @screen-md) {
+		text-align: center;
+
+		&::after {
+			display: none;
+		}
+
+		[class^="col-md"] {
+
+			&:first-child {
+				padding-right: 15px;
+			}
+
+			&:last-child {
+				padding-left: 15px;
+			}
+		}
+
+		.nav {
+			text-align: center;
+
+			> li {
+				display: inline-block;
+				float: none;
+				margin: 0 10px;
+			}
+		}
+	}
+}
+
+.copyright {
+	margin: 0;
+	text-align: right;
+	float: right;
+
+	p {
+		margin: 0;
+		line-height: 30px;
+
+		+ p {
+			margin-top: 15px;
+		}
+	}
+
+	@media (max-width: @screen-md) {
+		float: none;
+		text-align: center;
+	}
+}
+
+.back-to-top {
+	display: inline-block;
+	background: @footer-bg;
+	font-size: 24px;
+	line-height: 34px;
+	text-align: center;
+	width: 34px;
+	height: 34px;
+	border-radius: @border-radius-base;
+
+	&:hover {
+		text-decoration: none;
+		background: darken(@footer-bg, 3%);
+	}
+
+	@media (max-width: @screen-md) {
+		.center-block();
+		background: darken(@footer-bg, 3%);
+	}
+}
+
+.social {
+	float: left;
+
+	a {
+		display: inline-block;
+		font-size: 16px;
+		width: 30px;
+		height: 30px;
+		text-align: center;
+		line-height: 30px;
+		border-radius: 50%;
+		background: @footer-bg;
+		margin-right: 15px;
+		color: #fff;
+		.transition(all .15s ease-in-out);
+
+		&:hover {
+			color: #fff;
+		}
+
+		&.twitter {
+			background: #55acee;
+
+			&:hover {
+				background: lighten(#55acee, 10%);
+				.scale(1.2);
+			}
+		}
+
+		&.facebook {
+			background: #3b5998;
+
+			&:hover {
+				background: lighten(#3b5998, 10%);
+				.scale(1.2);
+			}
+		}
+
+		&.google-plus {
+			background: #dd4b39;
+
+			&:hover {
+				background: lighten(#dd4b39, 10%);
+				.scale(1.2);
+			}
+		}
+
+		&.youtube {
+			background: #cd201f;
+
+			&:hover {
+				background: lighten(#cd201f, 10%);
+				.scale(1.2);
+			}
+		}
+	}
+
+	@media (max-width: @screen-md) {
+		float: none;
+		text-align: center;
+	}
+}

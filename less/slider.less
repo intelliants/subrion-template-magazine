@@ -1,0 +1,152 @@
+
+//
+// Carousel on home page
+// --------------------------------------------------
+
+.sec-sticky {
+	padding: @vertical-rhythm 0;
+}
+
+.sl {
+
+	.owl-nav {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 50%;
+		margin-top: -23px;
+		z-index: 500;
+		// .opacity(.2);
+		.transition(all .2s ease-in-out);
+
+		[class*='owl-'] {
+			color: fade(@brand-danger, 90%);
+			padding: 0;
+			border-radius: 0;
+			margin: 0;
+			width: 30px;
+			height: 46px;
+			background: #fff;
+			display: block;
+			font-size: 24px;
+			line-height: 46px;
+			position: absolute;
+			left: -30px;
+			top: 0;
+
+			&:hover {
+				color: @brand-danger;
+				background: #fff;
+			}
+
+			&.owl-next {
+				left: auto;
+				right: -30px;
+			}
+		}
+	}
+
+	&__slide {
+		min-height: 400px;
+		.clearfix();
+		display: block;
+	}
+
+	&__item {
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+		width: 35%;
+		height: 200px;
+		float: left;
+
+		&__url {
+			position: absolute;
+				z-index: 10;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			// background: fade(#000, 30%);
+
+			// .transition(all .2s ease-in-out);
+		}
+
+		// &:hover {
+		// 	.sl__item__url {
+		// 		background: fade(#000, 10%);
+		// 	}
+		// }
+
+		&__caption {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			z-index: 20;
+			padding: 20px;
+			background: transparent;
+			background: -webkit-linear-gradient(fade(#000, 0%), fade(#000, 50%));
+			background: linear-gradient(fade(#000, 0%), fade(#000, 50%));
+
+			h3,
+			h4 {
+				font-weight: bold;
+				text-transform: uppercase;
+				margin: 0;
+
+				a {
+					font-size: 12px;
+					line-height: 12px;
+					// box-shadow: 4px 0 0 #000, -4px 0 0 #000;
+
+					&,
+					&:focus {
+						color: @brand-danger;
+						text-decoration: none;
+						// background: #000;
+					}
+
+					&:hover {
+						color: lighten(@brand-danger, 10%);
+						text-decoration: none;
+					}
+				}
+			}
+
+			h4 a {
+				font-size: 18px;
+
+				&,
+				&:focus {
+					color: #fff;
+				}
+
+				&:hover {
+					color:lighten(@brand-danger, 10%);
+				}
+			}
+		}
+
+		&:first-child {
+			height: 400px;
+			width: 65%;
+
+			.sl__item__caption {
+				h3,
+				h4 {
+
+					a {
+						font-size: 14px;
+						line-height: 24px;
+					}
+				}
+
+				h4 a {
+					font-size: 26px;
+				}
+			}
+		}
+	}
+}
