@@ -28,7 +28,11 @@
 	}
 
 	a {
-		color: @brand-danger;
+		&,
+		&:focus {
+			color: @brand-danger;
+			background: none;
+		}
 
 		&:hover {
 			color: @brand-danger;

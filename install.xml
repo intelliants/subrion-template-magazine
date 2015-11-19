@@ -15,6 +15,7 @@
 		<position menu="1" movable="0">mainmenu</position>
 
 		<position>slider</position>
+		<position>sponsored</position>
 		<position>verytop</position>
 		<position>top</position>
 		<position>landing</position>
@@ -117,7 +118,7 @@
 		<block status="active" position="top" header="0" classname="" order="5" sticky="0" pages="index">priority_categories</block>
 		<block status="active" position="top" header="1" classname="" order="15" sticky="0" pages="index">new_articles</block>
 		<block status="active" position="top" header="1" classname="box--special" order="11" collapsible="0">featured_articles</block>
-		<block status="active" position="verytop" header="1" classname="box--sponsored" sticky="0" pages="index" order="1" collapsible="0">sponsored_articles</block>
+		<block status="active" position="sponsored" header="0" classname="box--sponsored" sticky="0" pages="index" order="1" collapsible="0">sponsored_articles</block>
 
 		<block status="active" position="verybottom" header="1" classname="" sticky="1" order="1" collapsible="0">random_articles</block>
 		<block status="active" position="right" header="1" classname="" sticky="1" order="1" collapsible="0">popular_articles</block>

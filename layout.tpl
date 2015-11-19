@@ -68,29 +68,23 @@
 		</nav>
 
 		{if 'index' == $core.page.name}
-			<div class="sec sec-sticky">
-				<div class="container">{ia_blocks block='slider'}</div>
-			</div>
+			{ia_blocks block='slider'}
 		{/if}
 
 		{ia_hooker name='smartyFrontBeforeBreadcrumb'}
 
 		{include file='breadcrumb.tpl'}
 
+		{if isset($iaBlocks.sponsored)}
+			{ia_blocks block='sponsored'}
+		{/if}
+
 		{if isset($iaBlocks.verytop)}
 			<div class="verytop">
 				<div class="container">{ia_blocks block='verytop'}</div>
 			</div>
 		{/if}
-{*
-		{if 'index' == $core.page.name}
-			<div class="sec sec-landing">
-				<div class="container">
-					{ia_blocks block='landing'}
-				</div>
-			</div>
-		{else}
-*}
+
 		<div class="content">
 			<div class="container">
 				<div class="row">

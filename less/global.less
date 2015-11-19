@@ -134,6 +134,7 @@ body {
 }
 
 .content {
+  margin-top: 0 !important;
   padding: @vertical-rhythm 0;
   background: #fff;
   border-top: 1px solid #e9e9e9;
@@ -226,8 +227,16 @@ body {
 // Verytop
 // --------------------------------------------------
 
-.verytop {
+.sponsored {
   padding: @vertical-rhythm 0;
+}
+
+#block_sticky_articles + #block_sponsored_articles {
+  margin-top: 0 !important;
+
+  .sponsored {
+    padding-top: 0 !important;
+  }
 }
 
 .priority-cats {
