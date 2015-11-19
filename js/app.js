@@ -6,6 +6,23 @@ $(function() {
 	});
 
 	//
+	// Search
+	// --------------------------------------------------
+
+	$('.navbar-btn-search').click(function(e) {
+		e.preventDefault();
+
+		$(this).next().show().find('input').focus();
+	});
+
+	$(document).click(function(e) {
+		if (!$(e.target).hasClass('navbar-btn-search') && !$('.navbar-btn-search').find(e.target).length && e.target.id != 'navSearch' && !$('#navSearch').find(e.target).length) {
+			$("#navSearch").hide();
+		}
+	});
+
+
+	//
 	// Utils
 	// --------------------------------------------------
 
@@ -72,34 +89,4 @@ $(function() {
 
 	// 	intelli.cookie.write('cardsLayout', layout, 30, intelli.config.baseurl.replace(window.location.origin, ''));
 	// });
-
-
-
-	//
-	// View page: move author and tools after car info
-	// --------------------------------------------------
-
-	var mq = function(query, callback, usePolyfill) {
-	    var host = {};
-	    var isMatchMediaSupported = !!(window && window.matchMedia) && !usePolyfill;
-	    if(isMatchMediaSupported) {
-	        var res = window.matchMedia(query);
-	        callback.apply(host, [res.matches, res.media]);
-	        res.addListener(function(changed) {
-	            callback.apply(host, [changed.matches, changed.media]);
-	        });
-	    } else {
-	        console.log('IE its you! Go home IE! You are drunk!');
-	    }
-	}
-
-	if ($('.page-realestate_view').length) {
-		mq('(max-width: 768px)', function(match) {
-		    if (match) {
-		    	var $b = $('.content .aside');
-
-		    	$b.insertAfter($b.next());
-		    }
-		});
-	}
 });

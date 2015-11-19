@@ -221,3 +221,60 @@ a.navbar-btn-compare {
     }
   }
 }
+
+
+//
+// Search
+// --------------------------------------------------
+
+.navbar-search-wrp {
+  position: relative;
+}
+
+.nav-search {
+  display: none;
+  position: absolute;
+  top: 9px;
+  right: 1px;
+  height: 40px;
+  margin: 0;
+  width: 220px;
+
+  input {
+    border: 1px solid #ddd;
+    width: 220px;
+    padding: 9px 40px 9px 10px;
+
+    &:focus {
+      outline: 0;
+      border-color: @link-color;
+    }
+  }
+
+  button {
+    &,
+    &:focus {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      font-size: @font-size-base;
+      border: 0 none;
+      background: none;
+    }
+  }
+
+  @media (max-width: @screen-xs) {
+    width: auto;
+    right: 15px;
+    top: 0;
+    left: 15px;
+
+    input {
+      width: 100%;
+    }
+  }
+}

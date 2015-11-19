@@ -50,6 +50,10 @@
 		min-height: 400px;
 		.clearfix();
 		display: block;
+
+		@media (max-width: @screen-xs) {
+			min-height: 260px;
+		}
 	}
 
 	&__item {
@@ -61,6 +65,10 @@
 		height: 200px;
 		float: left;
 
+		@media (max-width: @screen-xs) {
+			height: 130px;
+		}
+
 		&__url {
 			position: absolute;
 				z-index: 10;
@@ -68,16 +76,7 @@
 				right: 0;
 				bottom: 0;
 				left: 0;
-			// background: fade(#000, 30%);
-
-			// .transition(all .2s ease-in-out);
 		}
-
-		// &:hover {
-		// 	.sl__item__url {
-		// 		background: fade(#000, 10%);
-		// 	}
-		// }
 
 		&__caption {
 			position: absolute;
@@ -118,6 +117,10 @@
 			h4 a {
 				font-size: 18px;
 
+				@media (max-width: @screen-xs) {
+					font-size: 14px;
+				}
+
 				&,
 				&:focus {
 					color: #fff;
@@ -140,12 +143,24 @@
 					a {
 						font-size: 14px;
 						line-height: 24px;
+
+						@media (max-width: @screen-xs) {
+							font-size: 12px;
+						}
 					}
 				}
 
 				h4 a {
 					font-size: 26px;
+
+					@media (max-width: @screen-xs) {
+						font-size: 20px;
+					}
 				}
+			}
+
+			@media (max-width: @screen-xs) {
+				height: 260px;
 			}
 		}
 	}

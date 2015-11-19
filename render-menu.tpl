@@ -5,6 +5,14 @@
 {elseif 'account' == $position}
 	{if 'account' == $menu.name && $member && $core.config.members_enabled}
 		<ul class="nav navbar-nav navbar-right nav-account">
+			<li class="navbar-search-wrp">
+				<a class="navbar-btn-search" href="#" title="{lang key='search'}"><span class="fa fa-search"></span> <span class="visible-xs-inline-block">{lang key='search'}</span></a>
+				<form action="{$smarty.const.IA_URL}search/" class="nav-search" id="navSearch">
+					<input type="text" name="q" placeholder="{lang key='search'}">
+					<button type="submit"><span class="fa fa-search"></span></button>
+				</form>
+			</li>
+			<li><a class="navbar-btn-wishlist" href="{$smarty.const.IA_URL}favorites/" title="{lang key='favorites'}"><span class="fa fa-star"></span> <span class="hidden-md hidden-lg">{lang key='favorites'}</span></a></li>
 			<li class="dropdown">
 				<a href="#" class="navbar-btn-login dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 					{printImage imgfile=$member.avatar title=$member.fullname|default:$member.username class='img-circle' gravatar=true email=$member.email width=30}
@@ -19,6 +27,14 @@
 		</ul>
 	{else}
 		<ul class="nav navbar-nav navbar-right nav-account">
+			<li class="navbar-search-wrp">
+				<a class="navbar-btn-search" href="#" title="{lang key='search'}"><span class="fa fa-search"></span> <span class="visible-xs-inline-block">{lang key='search'}</span></a>
+				<form action="{$smarty.const.IA_URL}search/" class="nav-search" id="navSearch">
+					<input type="text" name="q" placeholder="{lang key='search'}">
+					<button type="submit"><span class="fa fa-search"></span></button>
+				</form>
+			</li>
+			<li><a class="navbar-btn-wishlist" href="{$smarty.const.IA_URL}favorites/" title="{lang key='favorites'}"><span class="fa fa-star"></span></a></li>
 			<li><a data-toggle="modal" data-target="#loginModal" href="#" class="navbar-btn-login"><span class="fa fa-user"></span> <span class="-guest">{lang key='login_sign_up'}</span></a></li>
 			<li><a class="navbar-btn-accent" href="{$core.packages.publishing.url}add/"><span class="fa fa-pencil"></span> {lang key='add_article'}</a></li>
 		</ul>
@@ -48,7 +64,7 @@
 											<label for="field_password">{lang key='password'}:</label>
 											<input class="form-control" type="password" tabindex="5" name="password">
 										</div>
-							
+
 										<div class="form-group form-actions">
 											<button class="btn btn-primary" type="submit" tabindex="6" name="login">{lang key='login'}</button>
 											<a class="btn btn-link" href="{$smarty.const.IA_URL}forgot/">{lang key='forgot'}</a>
