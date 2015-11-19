@@ -7,7 +7,7 @@ Template for Subrion Publishing script
 3. Rename `subrion-template-magazine-master` to `magazine`
 4. Activate template in admin dashboard.
 
-## Or you can
+#### Or you can
 ```
 cd [root]/templates # where root is the location of subrion core
 git clone https://github.com/intelliants/subrion-template-magazine.git ./magazine
