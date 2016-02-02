@@ -4,8 +4,8 @@
 	<summary>Template for Subrion Publishing Script</summary>
 	<author>Gleb Surinov</author>
 	<contributor>Intelliants LLC</contributor>
-	<version>1.0.0</version>
-	<date>2015-11-18</date>
+	<version>1.0.1</version>
+	<date>2016-02-2</date>
 	<compatibility>4.0</compatibility>
 
 	<dependency type="package" exist="1">publishing</dependency>
@@ -18,7 +18,6 @@
 		<position>sponsored</position>
 		<position>verytop</position>
 		<position>top</position>
-		<position>landing</position>
 		<position>bottom</position>
 		<position>verybottom</position>
 		<position>copyright</position>
@@ -117,7 +116,7 @@
 		<block status="active" position="right" header="1" order="99" collapsible="0">articles_archive</block>
 		<block status="active" position="top" header="0" classname="" order="5" sticky="0" pages="index">priority_categories</block>
 		<block status="active" position="top" header="1" classname="" order="15" sticky="0" pages="index">new_articles</block>
-		<block status="active" position="top" header="1" classname="box--special" order="11" collapsible="0">featured_articles</block>
+		<block status="active" position="right" header="1" classname="box--special" order="-1" collapsible="0">featured_articles</block>
 		<block status="active" position="sponsored" header="0" classname="box--sponsored" sticky="0" pages="index" order="1" collapsible="0">sponsored_articles</block>
 
 		<block status="active" position="verybottom" header="1" classname="" sticky="1" order="1" collapsible="0">random_articles</block>
@@ -129,52 +128,6 @@
 		<block status="inactive">new_blog_posts</block>
 		<block status="inactive">blogs_archive</block>
 	</changeset>
-
-	<blocks>
-		<block name="benefits" 
-			   title="Benefits" 
-			   position="verybottom" 
-			   header="0"
-			   collapsible="0" 
-			   sticky="0"
-			   pages="index" 
-			   status="active" 
-			   type="html">
-			<![CDATA[
-<div class="benefits">
-	<div class="container">
-		<h2 class="title title--accent">Why our portal is the best?</h2>
-		<div class="row">
-			<div class="col-md-4">
-				<div class="f-block">
-					<span class="fa fa-lock"></span>
-					<h4>Buy safely</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi repudiandae quo nisi iusto voluptatem minus debitis consequuntur.</p>
-					<p><a href="#">Learn more</a></p>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="f-block">
-					<span class="fa fa-star"></span>
-					<h4>Looking for a special offer?</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi repudiandae quo nisi iusto voluptatem minus debitis consequuntur.</p>
-					<p><a href="#">Learn more</a></p>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="f-block">
-					<span class="fa fa-rocket"></span>
-					<h4>Sell faster</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi repudiandae quo nisi iusto voluptatem minus debitis consequuntur.</p>
-					<p><a href="#">Learn more</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-			]]>
-		</block>
-	</blocks>
 
 	<phrases>
 		<phrase category="frontend" key="login">Log in</phrase>
