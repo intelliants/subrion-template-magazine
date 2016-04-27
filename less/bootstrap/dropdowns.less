@@ -239,6 +239,10 @@
     display: block;
 }
 
+.dropdown-submenu>a {
+  float: none !important;
+}
+
 .dropdown-submenu>a:after {
     display: block;
     content: " ";
@@ -263,6 +267,15 @@
 
 .dropdown-submenu.pull-left>.dropdown-menu {
     left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+
+.dropdown-submenu.flyout-to-left>.dropdown-menu {
+    left: auto;
+    right: 100%;
     margin-left: 10px;
     -webkit-border-radius: 6px 0 6px 6px;
     -moz-border-radius: 6px 0 6px 6px;

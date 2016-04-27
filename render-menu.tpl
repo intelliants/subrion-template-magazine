@@ -21,7 +21,7 @@
 				</a>
 				<span class="navbar-nav__drop dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-angle-down"></span></span>
 				{ia_hooker name='smartyFrontInsideAccountBox'}
-				{ia_menu menus=$menu.contents class='dropdown-menu' loginout=true}
+				{ia_menu menus=$menu.contents class='dropdown-menu is-account-submenu' loginout=true}
 			</li>
 			<li><a class="navbar-btn-accent" href="{$core.packages.publishing.url}add/"><span class="fa fa-pencil"></span> {lang key='add_article'}</a></li>
 		</ul>
