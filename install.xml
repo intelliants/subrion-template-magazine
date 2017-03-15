@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<template name="magazine">
+<module type="template" name="magazine">
 	<title>Magazine</title>
 	<summary>Template for Subrion Publishing Script</summary>
 	<author>Gleb Surinov</author>
 	<contributor>Intelliants LLC</contributor>
-	<version>1.0.2</version>
-	<date>2016-02-2</date>
-	<compatibility>4.0</compatibility>
+	<version>1.1.0</version>
+	<date>2017-03-15</date>
+	<compatibility>4.1</compatibility>
 
 	<dependency type="package" exist="1">publishing</dependency>
 
@@ -63,7 +63,7 @@
 	<config group="template_magazine" 
 		    name="website_color" 
 		    type="select" 
-		    multiplevalues="default,sky,roseus,carrot,bedroom" 
+		    values="default,sky,roseus,carrot,bedroom" 
 		    description="Template color"
 		    order="3004">default</config>
 
@@ -138,4 +138,4 @@
 		<phrase category="frontend" key="added_on">added on</phrase>
 		<phrase category="frontend" key="copyright_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint accusantium doloremque, numquam, aut, modi similique corporis totam nulla pariatur nesciunt harum mollitia. Qui inventore dolores laboriosam, delectus temporibus deserunt neque?</phrase>
 	</phrases>
-</template>
+</module>

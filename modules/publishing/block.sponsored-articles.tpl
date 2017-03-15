@@ -1,4 +1,4 @@
-{if isset($sponsored_articles)}
+{if !empty($sponsored_articles)}
 	<div class="sponsored">
 		<div class="container">
 			<h4 class="box__caption">{$block.title|escape}</h4>
@@ -9,7 +9,7 @@
 							<div class="ia-item ia-item--card ia-item--card-bg" id="article-{$article.id}">
 								{if $article.image}
 									<a class="ia-item__image" href="{ia_url type='url' item='articles' data=$article}">
-										{printImage imgfile=$article.image.path title=$article.title class='img-responsive'}
+										{ia_image file=$article.image title=$article.title class='img-responsive' type='large'}
 									</a>
 								{/if}
 

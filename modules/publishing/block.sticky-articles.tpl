@@ -1,10 +1,10 @@
-{if isset($sticky_articles)}
+{if !empty($sticky_articles)}
 	<div class="sec sec-sticky">
 		<div class="container">
 			<div class="owl-carousel sl">
 				<div class="sl__slide">
 					{foreach $sticky_articles as $article}
-						<div class="sl__item" style="background-image: url({printImage imgfile=$article.image.path title=$article.title fullimage=true url=true});">
+						<div class="sl__item" style="background-image: url('{ia_image file=$article.image title=$article.title type="large" url=true}');">
 							<a class="sl__item__url" href="{ia_url item='articles' type='url' data=$article text=$article.title}"></a>
 							<div class="sl__item__caption">
 								<h3>{ia_url item='articlecats' data=$article text=$article.category_title}</h3>

@@ -15,7 +15,7 @@
 			<li><a class="navbar-btn-wishlist" href="{$smarty.const.IA_URL}favorites/" title="{lang key='favorites'}"><span class="fa fa-star"></span> <span class="hidden-md hidden-lg">{lang key='favorites'}</span></a></li>
 			<li class="dropdown">
 				<a href="#" class="navbar-btn-login dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-					{printImage imgfile=$member.avatar title=$member.fullname|default:$member.username class='img-circle' gravatar=true email=$member.email width=30}
+					{ia_image file=$member.avatar title=$member.fullname|default:$member.username class='img-circle' gravatar=true email=$member.email width=30 type='thumbnail'}
 
 					{$member.fullname|default:$member.username}
 				</a>

@@ -1,7 +1,7 @@
 <div class="ia-item ia-item--{$listing.status}{if $listing.sponsored} ia-item--sponsored{/if}{if $listing.featured} ia-item--featured{/if} has-panel" id="article-{$listing.id}">
 	{if $listing.image}
 		<a class="ia-item__image" href="{ia_url type='url' item='articles' data=$listing}">
-			{printImage imgfile=$listing.image.path title=$listing.title class='img-responsive'}
+			{ia_image file=$listing.image title=$listing.title class='img-responsive' type='thumbnail'}
 		</a>
 	{/if}
 

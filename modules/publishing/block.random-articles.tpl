@@ -1,4 +1,4 @@
-{if isset($random_articles) && $random_articles}
+{if !empty($random_articles)}
 	<div class="random-articles">
 		<div class="row">
 			{foreach $random_articles as $listing}

@@ -1,10 +1,10 @@
-{if isset($popular_articles) && $popular_articles}
+{if !empty($popular_articles)}
 	<div class="ia-items popular-articles">
 		{foreach $popular_articles as $article}
 			<div class="ia-item">
 				{if $article.image}
 					<a class="ia-item__image ia-item__image--small" href="{ia_url type='url' item='articles' data=$article}">
-						{printImage imgfile=$article.image.path title=$article.title class='img-responsive'}
+						{ia_image file=$article.image title=$article.title class='img-responsive' type='thumbnail'}
 					</a>
 				{/if}
 				<div class="ia-item__content">

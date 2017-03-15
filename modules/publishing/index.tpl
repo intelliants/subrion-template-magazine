@@ -2,7 +2,7 @@
 	<div class="slogan">{$category.description}</div>
 {/if}
 
-{if isset($categories) && $categories}
+{if !empty($categories)}
 	<div class="ia-categories m-b">
 		{include file='ia-categories.tpl' categories=$categories item='articlecats' show_amount=true num_columns=$core.config.categories_columns icons=$core.config.allow_icons}
 	</div>
@@ -47,7 +47,7 @@
 	</table>
 {/if}
 
-{if isset($articles) && $articles}
+{if !empty($articles)}
 	{if !isset($articles_sorting) || $articles_sorting}
 		<div class="ia-sorting">
 			<form action="{$smarty.const.IA_SELF}" method="post" id="sort_form" class="form-inline pull-left m-0">

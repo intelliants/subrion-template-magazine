@@ -1,5 +1,5 @@
 {if !('publishing_home' == $core.page.name && '1' != $category.id)}
-	{if $new_articles}
+	{if !empty($new_articles)}
 		<div class="new-articles">
 			<div class="row">
 				{foreach $new_articles as $listing}
