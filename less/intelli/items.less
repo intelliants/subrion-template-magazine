@@ -15,9 +15,10 @@
 
 .ia-sorting {
   .clearfix();
-  margin-bottom: @gap;
+  margin-bottom: @gap*2;
   padding: 10px;
-  background: #f2f2f2;
+  background: #f7f7f7;
+  border-radius: 3px;
 
   .dropdown-menu .fa {
     padding: 3px 0;
@@ -373,6 +374,9 @@
 // --------------------------------------------------
 
 .ia-categories {
+  .ia-cat {
+    margin-bottom: 6px;
+  }
 
   @media (max-width: @grid-float-breakpoint) {
     .row {
